@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - WonderLooks | Premium Unisex Salon</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">WonderLooks</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="booknow.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/book\ now\ background.jfif') center/cover; padding: 150px 0 100px; margin-top: 70px;">
+        <div class="container">
+            <div class="text-center text-white" data-aos="fade-up">
+                <h1 class="display-3 fw-bold mb-3">Book Your Appointment</h1>
+                <p class="lead">Transform your look with WonderLooks - Book your slot now!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Benefits -->
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" data-aos="zoom-in">
+                    <div class="booking-benefit p-4">
+                        <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                        <h5>Easy Scheduling</h5>
+                        <p class="text-muted mb-0">Choose your preferred date and time slot</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="booking-benefit p-4">
+                        <i class="fas fa-bell fa-3x text-primary mb-3"></i>
+                        <h5>Instant Confirmation</h5>
+                        <p class="text-muted mb-0">Get booking confirmation via WhatsApp</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="booking-benefit p-4">
+                        <i class="fas fa-user-check fa-3x text-primary mb-3"></i>
+                        <h5>Expert Stylists</h5>
+                        <p class="text-muted mb-0">Choose your preferred stylist</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="booking-benefit p-4">
+                        <i class="fas fa-calendar-check fa-3x text-primary mb-3"></i>
+                        <h5>Flexible Options</h5>
+                        <p class="text-muted mb-0">Easy rescheduling and cancellation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section -->
+    <section class="appointment py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Booking Form -->
+                <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="appointment-form">
+                        <h3 class="mb-4">Fill Your Details</h3>
+                        <form id="appointmentForm">
+                            <div class="row">
+                                <!-- Personal Information -->
+                                <div class="col-12 mb-3">
+                                    <h5 class="text-primary mb-3"><i class="fas fa-user me-2"></i>Personal Information</h5>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" placeholder="Enter your full name" required>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" placeholder="your.email@example.com" required>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Gender</label>
+                                    <select class="form-control" required>
+                                        <option value="" selected>Select Gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <!-- Service Selection -->
+                                <div class="col-12 mb-3 mt-3">
+                                    <h5 class="text-primary mb-3"><i class="fas fa-cut me-2"></i>Service Details</h5>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Select Service Category *</label>
+                                    <select class="form-control" id="serviceCategory" required>
+                                        <option value="" selected>Choose Service Category</option>
+                                        <option>Hair Services</option>
+                                        <option>Skin & Beauty</option>
+                                        <option>Bridal & Party</option>
+                                        <option>Men's Grooming</option>
+                                        <option>Spa & Treatments</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Select Specific Service *</label>
+                                    <select class="form-control" required>
+                                        <option value="" selected>Select Service</option>
+                                        <option>Haircut & Styling</option>
+                                        <option>Hair Coloring</option>
+                                        <option>Hair Spa</option>
+                                        <option>Keratin Treatment</option>
+                                        <option>Facial Treatment</option>
+                                        <option>Makeup</option>
+                                        <option>Waxing</option>
+                                        <option>Beard Grooming</option>
+                                        <option>Bridal Package</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Preferred Stylist</label>
+                                    <select class="form-control">
+                                        <option value="" selected>Any Available</option>
+                                        <option>Priyanka Sharma - Master Stylist</option>
+                                        <option>Neha Verma - Color Expert</option>
+                                        <option>Ritika Malhotra - Hair Artist</option>
+                                        <option>Pooja Kapoor - Treatment Specialist</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Estimated Budget</label>
+                                    <select class="form-control">
+                                        <option value="" selected>Select Budget Range</option>
+                                        <option>Under ₹500</option>
+                                        <option>₹500 - ₹1000</option>
+                                        <option>₹1000 - ₹2000</option>
+                                        <option>₹2000 - ₹5000</option>
+                                        <option>Above ₹5000</option>
+                                    </select>
+                                </div>
+
+                                <!-- Date & Time -->
+                                <div class="col-12 mb-3 mt-3">
+                                    <h5 class="text-primary mb-3"><i class="fas fa-calendar-alt me-2"></i>Schedule</h5>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Preferred Date *</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Preferred Time *</label>
+                                    <select class="form-control" required>
+                                        <option value="" selected>Select Time Slot</option>
+                                        <option>10:00 AM - 11:00 AM</option>
+                                        <option>11:00 AM - 12:00 PM</option>
+                                        <option>12:00 PM - 1:00 PM</option>
+                                        <option>1:00 PM - 2:00 PM</option>
+                                        <option>2:00 PM - 3:00 PM</option>
+                                        <option>3:00 PM - 4:00 PM</option>
+                                        <option>4:00 PM - 5:00 PM</option>
+                                        <option>5:00 PM - 6:00 PM</option>
+                                        <option>6:00 PM - 7:00 PM</option>
+                                        <option>7:00 PM - 8:00 PM</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Additional Notes / Special Requirements</label>
+                                    <textarea class="form-control" rows="4" placeholder="Tell us about any specific requirements, allergies, or preferences..."></textarea>
+                                </div>
+
+                                <!-- Terms & Conditions -->
+                                <div class="col-12 mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                        <label class="form-check-label" for="termsCheck">
+                                            I agree to the <a href="#" class="text-primary">terms and conditions</a> and <a href="#" class="text-primary">cancellation policy</a>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="whatsappCheck">
+                                        <label class="form-check-label" for="whatsappCheck">
+                                            Send me appointment reminders and offers on WhatsApp
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-primary-custom btn-lg px-5">
+                                        <i class="fab fa-whatsapp me-2"></i>Confirm Booking
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact & Info Sidebar -->
+                <div class="col-lg-4">
+                    <div class="contact-info sticky-top" style="top: 100px;">
+                        <h3 class="mb-4" data-aos="fade-left" data-aos-delay="300">Contact Information</h3>
+
+                        <div class="contact-item" data-aos="fade-left" data-aos-delay="400">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Our Location</h5>
+                                <p>124 Rose Avenue, Ansal<br>Panipat, 132103</p>
+                                <a href="https://maps.google.com" target="_blank" class="text-primary">
+                                    <i class="fas fa-directions me-1"></i>Get Directions
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-left" data-aos-delay="500">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p><a href="tel:+917372870210" class="text-light">+91 7372870210</a></p>
+                                <small class="text-light">Mon-Sat: 10:00 AM - 8:00 PM</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-left" data-aos-delay="600">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email Us</h5>
+                                <p><a href="mailto:Suruchi@wonderlooks.com" class="text-light">Suruchi@wonderlooks.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-left" data-aos-delay="700">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Opening Hours</h5>
+                                <p>Monday - Saturday<br>10:00 AM - 8:00 PM</p>
+                                <p class="text-danger mb-0"><strong>Sunday: Closed</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="mt-4 pt-4 border-top" data-aos="fade-left" data-aos-delay="800">
+                            <h5 class="mb-3">Quick Links</h5>
+                            <div class="d-grid gap-2">
+                                <a href="services.html" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-cut me-2"></i>View All Services
+                                </a>
+                                <a href="pricing.html" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-tags me-2"></i>Check Pricing
+                                </a>
+                                <a href="https://wa.me/917372870210" target="_blank" class="btn btn-success btn-sm">
+                                    <i class="fab fa-whatsapp me-2"></i>WhatsApp Us
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="mt-4 pt-4 border-top text-center" data-aos="fade-left" data-aos-delay="900">
+                            <h5 class="mb-3">Follow Us</h5>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Policies -->
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Booking Policies</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="zoom-in">
+                    <div class="policy-card text-center p-4 h-100">
+                        <i class="fas fa-calendar-times fa-3x text-primary mb-3"></i>
+                        <h5>Cancellation Policy</h5>
+                        <p class="text-muted mb-0">Free cancellation up to 4 hours before appointment. Late cancellations may incur charges.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="policy-card text-center p-4 h-100">
+                        <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                        <h5>Rescheduling</h5>
+                        <p class="text-muted mb-0">Reschedule your appointment anytime before 2 hours of your booking time at no extra cost.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="policy-card text-center p-4 h-100">
+                        <i class="fas fa-user-clock fa-3x text-primary mb-3"></i>
+                        <h5>Late Arrival</h5>
+                        <p class="text-muted mb-0">Please arrive 10 minutes early. Late arrivals may result in reduced service time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Booking FAQs</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="bookingAccordion">
+                        <div class="accordion-item" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#booking1">
+                                    How do I confirm my booking?
+                                </button>
+                            </h2>
+                            <div id="booking1" class="accordion-collapse collapse show" data-bs-parent="#bookingAccordion">
+                                <div class="accordion-body">
+                                    Once you submit the booking form, you'll be redirected to WhatsApp with your details. Simply send the message and we'll confirm your appointment immediately!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#booking2">
+                                    Can I book for same-day appointments?
+                                </button>
+                            </h2>
+                            <div id="booking2" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                <div class="accordion-body">
+                                    Yes! Same-day appointments are available based on stylist availability. For guaranteed booking, we recommend booking at least 24 hours in advance.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#booking3">
+                                    Do I need to pay in advance?
+                                </button>
+                            </h2>
+                            <div id="booking3" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                <div class="accordion-body">
+                                    No advance payment is required for regular services. However, for bridal packages and premium services above ₹5000, we require a 25% advance booking amount.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#booking4">
+                                    What if I need to cancel or reschedule?
+                                </button>
+                            </h2>
+                            <div id="booking4" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                <div class="accordion-body">
+                                    You can cancel or reschedule by calling us or through WhatsApp. Free cancellation is available up to 4 hours before your appointment time.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#booking5">
+                                    Can I book multiple services in one appointment?
+                                </button>
+                            </h2>
+                            <div id="booking5" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! You can mention multiple services in the "Additional Notes" section, and we'll allocate the required time for all your services.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container">
+            <div class="text-center text-white" data-aos="zoom-in">
+                <i class="fas fa-phone-volume fa-3x mb-3"></i>
+                <h2 class="mb-3">Prefer to Book Over Phone?</h2>
+                <p class="lead mb-4">Call us now and speak with our friendly staff</p>
+                <a href="tel:+917372870210" class="btn btn-light btn-lg px-5">
+                    <i class="fas fa-phone me-2"></i>Call +91 7372870210
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-about">
+                        <div class="footer-logo">Wonderlooks</div>
+                        <p>Premium unisex salon offering cutting-edge hairstyling, coloring, and grooming services.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="booknow.html">Book Now</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="footer-links">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>124 Rose Avenue, Ansal<br>Panipat, 132103</p>
+                        <p><i class="fas fa-phone me-2"></i>91+ 7372870210</p>
+                        <p><i class="fas fa-envelope me-2"></i>Suruchi@wonderlooks.com</p>
+                        <p><i class="fas fa-clock me-2"></i>Mon-Sat: 10am - 8pm</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 Wonderlooks Salon. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top-btn" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 1000, once: true });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form submission handler - Send to WhatsApp
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.querySelector('input[placeholder="Enter your full name"]').value;
+            const email = document.querySelector('input[placeholder="your.email@example.com"]').value;
+            const phone = document.querySelector('input[placeholder="+91 XXXXX XXXXX"]').value;
+            const gender = document.querySelector('select[required]').value;
+            const serviceCategory = document.getElementById('serviceCategory').value;
+            const specificService = document.querySelectorAll('select[required]')[2].value;
+            const stylist = document.querySelectorAll('select')[3].value;
+            const budget = document.querySelectorAll('select')[4].value;
+            const date = document.querySelector('input[type="date"]').value;
+            const time = document.querySelectorAll('select[required]')[3].value;
+            const notes = document.querySelector('textarea').value;
+            
+            // Create WhatsApp message
+            let message = `*🎀 NEW APPOINTMENT BOOKING 🎀*\n\n`;
+            message += `*Personal Details:*\n`;
+            message += `👤 Name: ${name}\n`;
+            message += `📧 Email: ${email}\n`;
+            message += `📱 Phone: ${phone}\n`;
+            message += `⚧ Gender: ${gender}\n\n`;
+            message += `*Service Details:*\n`;
+            message += `📋 Category: ${serviceCategory}\n`;
+            message += `✂️ Service: ${specificService}\n`;
+            message += `👨‍🎨 Stylist: ${stylist}\n`;
+            message += `💰 Budget: ${budget}\n\n`;
+            message += `*Schedule:*\n`;
+            message += `📅 Date: ${date}\n`;
+            message += `🕐 Time: ${time}\n`;
+            if(notes) {
+                message += `\n*Additional Notes:*\n${notes}\n`;
+            }
+            message += `\n_Please confirm my appointment. Thank you!_ ✨`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Your WhatsApp number (with country code, no + or spaces)
+            const whatsappNumber = '917372870210';
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank');
+            
+            // Show success message
+            alert('Redirecting to WhatsApp... Please send the message to confirm your booking!');
+            
+            // Optional: Reset form after sending
+            // this.reset();
+        });
+
+        // Set minimum date to today
+        const dateInput = document.querySelector('input[type="date"]');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    </script>
+    <script src="chatbot-data.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
